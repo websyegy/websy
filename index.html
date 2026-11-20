@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBSY — Shopify Theme & Storefront Studio</title>
+  <meta name="description" content="We are websy — a team of young Egyptian teenagers built on creativity, helping each other and our clients grow, real discipline, and the belief that every single detail matters.">
+  
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WEBSY — Shopify Theme & Storefront Studio">
+  <meta property="og:description" content="We are websy — building custom Shopify storefronts and bespoke streetwear themes with obsessive attention to craft.">
+  <meta property="og:image" content="BIG W LOGO.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="WEBSY — Shopify Theme & Storefront Studio">
+  <meta name="twitter:description" content="We are websy — a team of young Egyptian teenagers built on creativity, helping each other and our clients grow, real discipline, and the belief that every single detail matters.">
+  <meta name="twitter:image" content="BIG W LOGO.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="BIG W LOGO.png">
+
+  <style>
+    @font-face {
+      font-family: 'Akira Expanded';
+      src: url('font-akira-expanded.otf') format('opentype');
+      font-weight: 700 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-page: #EFE7DA;
+      --bg-card: #E8DFD1;
+      --color-ink: #1E1916;
+      --color-muted: #6F5E4D;
+      --color-accent: #8D7661;
+      --border-subtle: rgba(141, 118, 97, 0.28);
+      --border-hairline: rgba(141, 118, 97, 0.22);
+      --font-heading: 'Akira Expanded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--color-ink);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(32px, 6vw, 80px) clamp(16px, 4vw, 40px);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .websy-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Header & Hero */
+    .websy-header {
+      margin-bottom: clamp(28px, 4vw, 40px);
+    }
+
+    .websy-hero {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3.5vw, 32px);
+    }
+
+    .websy-avatar {
+      width: clamp(76px, 12vw, 100px);
+      height: clamp(76px, 12vw, 100px);
+      border-radius: 18px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .websy-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 4px 14px rgba(30, 25, 22, 0.08));
+    }
+
+    .websy-headings {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .websy-title {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1.05;
+      color: var(--color-ink);
+    }
+
+    .websy-role {
+      font-size: clamp(13px, 1.8vw, 15px);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--color-muted);
+      text-transform: uppercase;
+    }
+
+    /* Profile Card */
+    .websy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: clamp(24px, 4vw, 44px);
+      box-shadow: 0 4px 24px rgba(30, 25, 22, 0.04);
+    }
+
+    .websy-section-heading {
+      margin-bottom: 16px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    .websy-copy {
+      margin-bottom: 14px;
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.55;
+      font-weight: 500;
+      color: var(--color-ink);
+    }
+
+    .websy-subcopy {
+      margin-bottom: 28px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--color-muted);
+    }
+
+    /* Meta Grid */
+    .websy-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      padding: 22px 0;
+      border-top: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+      margin-bottom: 28px;
+    }
+
+    .websy-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .websy-meta-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--color-accent);
+      text-transform: uppercase;
+    }
+
+    .websy-meta-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-ink);
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .websy-meta-note {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+
+    .websy-meta-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 180ms ease;
+      word-break: break-all;
+    }
+
+    .websy-meta-link:hover {
+      color: var(--color-muted);
+    }
+
+    /* Action Buttons */
+    .websy-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .websy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+
+    .websy-btn-maintenance {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      opacity: 0.75;
+      margin-left: 2px;
+    }
+
+    .websy-btn--primary {
+      background: var(--color-ink);
+      color: var(--bg-page);
+      border: 1px solid var(--color-ink);
+    }
+
+    .websy-btn--primary:hover {
+      background: #362E29;
+      border-color: #362E29;
+      transform: translateY(-1px);
+    }
+
+    .websy-btn--secondary {
+      background: transparent;
+      color: var(--color-ink);
+      border: 1px solid rgba(141, 118, 97, 0.45);
+    }
+
+    .websy-btn--secondary:hover {
+      background: rgba(141, 118, 97, 0.14);
+      border-color: var(--color-ink);
+      transform: translateY(-1px);
+    }
+
+    /* Return to Store Navigation */
+    .websy-return-bar {
+      margin-bottom: clamp(16px, 2.5vw, 24px);
+      display: flex;
+      align-items: center;
+    }
+
+    .websy-btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--color-ink);
+      border: 1px solid var(--border-subtle);
+      padding: 9px 18px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 180ms ease;
+      cursor: pointer;
+    }
+
+    .websy-btn-back:hover {
+      background: var(--bg-card);
+      border-color: var(--color-ink);
+      transform: translateX(-2px);
+    }
+
+    .websy-btn-back svg {
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .websy-footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+      .websy-btn {
+        width: 100%;
+      }
+      .websy-meta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="websy-container">
+    <!-- Return to Storefront Navigation Bar -->
+    <div class="websy-return-bar">
+      <a href="#" id="websy-return-store-btn" class="websy-btn-back">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span id="websy-return-store-label">RETURN TO STORE</span>
+      </a>
+    </div>
+
+    <!-- Top Studio Header -->
+    <header class="websy-header">
+      <div class="websy-hero">
+        <div class="websy-avatar">
+          <img src="BIG W LOGO.png" alt="WEBSY Logo" width="100" height="100">
+        </div>
+        <div class="websy-headings">
+          <h1 class="websy-title">WEBSY</h1>
+          <p class="websy-role">Shopify Theme &amp; Storefront Studio</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Profile Card -->
+    <section class="websy-card">
+      <h2 class="websy-section-heading">WHO WE ARE</h2>
+      <p class="websy-copy">
+        We are websy — a team of young Egyptian teenagers built on creativity, helping each other and our clients grow, real discipline, and the belief that every single detail matters.
+      </p>
+      <p class="websy-subcopy">
+        We care about the craft behind every pixel, spacing choice, and interaction so storefronts feel intentional, honest, and alive.
+      </p>
+
+      <!-- Quick Info Meta Grid -->
+      <div class="websy-meta-grid">
+        <div class="websy-meta-item">
+          <span class="websy-meta-label">LOCATION</span>
+          <span class="websy-meta-value">Cairo, Egypt</span>
+        </div>
+
+        <div class="websy-meta-item">
+          <span class="websy-meta-label">LANGUAGES</span>
+          <span class="websy-meta-value">English, Arabic</span>
+        </div>
+
+        <div class="websy-meta-item">
+          <span class="websy-meta-label">DIRECT EMAIL</span>
+          <a href="mailto:websyeg@outlook.com" class="websy-meta-link">websyeg@outlook.com</a>
+        </div>
+
+        <div class="websy-meta-item">
+          <span class="websy-meta-label">STUDIO WEBSITE</span>
+          <span class="websy-meta-value">websyeg.site <span class="websy-meta-note">(Under maintenance)</span></span>
+        </div>
+      </div>
+
+      <!-- Action Buttons Row -->
+      <div class="websy-actions">
+        <a href="https://wa.me/201034633882" target="_blank" rel="noopener noreferrer" class="websy-btn websy-btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>CONTACT US (WHATSAPP)</span>
+        </a>
+
+        <a href="https://websyeg.site" target="_blank" rel="noopener noreferrer" class="websy-btn websy-btn--secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span>WEBSYEG.SITE</span>
+          <span class="websy-btn-maintenance">(Currently under maintenance)</span>
+        </a>
+
+        <a href="https://www.instagram.com/websyeg?jplx=Nzc0bDh0aHF2eDYw" target="_blank" rel="noopener noreferrer" class="websy-btn websy-btn--secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>INSTAGRAM</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="websy-footer">
+      &copy; 2026 WEBSY &bull; SHOPIFY THEME &amp; STOREFRONT STUDIO
+    </footer>
+  </main>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('websy-return-store-btn');
+      var label = document.getElementById('websy-return-store-label');
+      if (!btn) return;
+
+      var params = new URLSearchParams(window.location.search);
+      var returnUrlParam = params.get('return_url');
+      var storeNameParam = params.get('store_name');
+
+      var targetUrl = '';
+      if (returnUrlParam) {
+        try {
+          var parsed = new URL(returnUrlParam, window.location.href);
+          if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+            targetUrl = parsed.href;
+          }
+        } catch (e) {
+          targetUrl = returnUrlParam;
+        }
+      } else if (document.referrer) {
+        try {
+          var ref = new URL(document.referrer);
+          if (ref.href !== window.location.href) {
+            targetUrl = ref.href;
+          }
+        } catch (e) {}
+      }
+
+      if (storeNameParam && label) {
+        try {
+          label.textContent = 'RETURN TO ' + decodeURIComponent(storeNameParam).toUpperCase();
+        } catch (e) {}
+      }
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (targetUrl) {
+          window.location.href = targetUrl;
+        } else if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = '/';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
